@@ -5,22 +5,22 @@ package main
 import "fmt"
 
 func twoSum(numbers []int, target int) []int {
-	left := 0
-	right := len(numbers) - 1
+	l := 0
+	r := len(numbers) - 1
 
-	for left < right {
-		numberOne := numbers[left]
-		numberTwo := numbers[right]
-		currentSum := numberOne + numberTwo
+	for l < r {
+		n1 := numbers[l]
+		n2 := numbers[r]
+		cs := n1 + n2
 
-		if currentSum == target {
-			return []int{left + 1, right + 1}
+		if cs == target {
+			return []int{l + 1, r + 1}
 		}
 
-		if currentSum < target {
-			left++
+		if cs < target {
+			l++
 		} else {
-			right--
+			r--
 		}
 	}
 	return nil

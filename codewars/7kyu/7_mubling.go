@@ -24,25 +24,3 @@ func main() {
 	fmt.Println(Accum("RqaEzty") == "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy")
 	fmt.Println(Accum("cwAt") == "C-Ww-Aaa-Tttt")
 }
-
-/* Alternate Solution
-
-func Accum(s string) string {
-    parts := make([]string, len(s))
-
-    for i := 0; i < len(s); i++ {
-      parts[i] = strings.ToUpper(string(s[i])) + strings.Repeat(strings.ToLower(string(s[i])), i)
-    }
-
-    return strings.Join(parts, "-")
-}
-
-func Accum(s string) string {
-    words := make([]string, len(s))
-
-    for i, c := range s {
-        words[i] = strings.Title(strings.Repeat(strings.ToLower(string(c)), i+1))
-    }
-
-    return strings.Join(words, "-")
-*/
